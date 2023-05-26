@@ -69,14 +69,14 @@ const Navbar = () => {
           </div>
 
           <div className="icons">
-            <SearchIcon />
+            
             {user && (
               <Link to="/profile">
                 <PersonOutlineOutlinedIcon />
               </Link>
             )}
 
-            <FavoriteBorderOutlinedIcon />
+            
             <div className="cartIcon" onClick={() => setOpen(!open)}>
               <ShoppingCartOutlinedIcon />
               <span>{products.length}</span>

@@ -19,7 +19,7 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
 
           return {
             price_data: {
-              currency: "usd",
+              currency: "INR",
               product_data: {
                 name: item.title,
               },
@@ -34,7 +34,7 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
         shipping_address_collection: {allowed_countries: ['US', 'IN']},
         payment_method_types: ["card"],
         mode: "payment",
-        success_url: process.env.CLIENT_URL+"?success=true",
+        success_url: process.env.CLIENT_URL.replace(/\/$/, '') + "/success",
         cancel_url: process.env.CLIENT_URL+"?success=false",
         line_items: lineItems,
       });

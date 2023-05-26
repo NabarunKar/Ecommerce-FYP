@@ -7,12 +7,13 @@ import { useDispatch } from "react-redux";
 import { makeRequest } from "../../makeRequest";
 import { loadStripe } from "@stripe/stripe-js";
 import { useNavigate } from "react-router-dom";
+import { useAuthContext } from "../../hooks/useAuthContext";
 
 const Cart = () => {
   const products = useSelector((state) => state.cart.products);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
+  const {user} = useAuthContext();
   const totalPrice = () => {
     let total = 0;
     products.forEach((item) => {
@@ -47,7 +48,7 @@ const Cart = () => {
             <h1>{item.title}</h1>
             <p>{item.desc?.substring(0, 100)}</p>
             <div className="price">
-              {item.quantity} x ${item.price}
+              {item.quantity} x ₹{item.price}
             </div>
           </div>
           <DeleteOutlinedIcon
@@ -58,9 +59,11 @@ const Cart = () => {
       ))}
       <div className="total">
         <span>SUBTOTAL</span>
-        <span>${totalPrice()}</span>
+        <span>₹{totalPrice()}</span>
       </div>
-      <button onClick={handlePayment}>PROCEED TO CHECKOUT</button>
+      {user && (<button onClick={handlePayment}>PROCEED TO CHECKOUT</button>)}
+      {!user && (<span>PLEASE LOG IN BEFORE PROCEEDING FURTHER</span>)}
+      <br />
       <span className="reset" onClick={() => dispatch(resetCart())}>
         Reset Cart
       </span>
