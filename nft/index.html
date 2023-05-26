@@ -1,0 +1,32 @@
+<html>
+
+<head>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="metamask.css" type="text/css">
+    <script src="dist/metamask-onboarding.bundle.js"></script>
+</head>
+
+<body>
+    <div>
+        <input class="block-button" type="button" value="Connect Wallet" id="connectWallet">
+        <div>
+            <h2>Mint Tokens</h2>
+            <label for="to">To Address:</label>
+            <input type="text" id="to" placeholder="Enter address" required><br>
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" placeholder="Enter quantity" required><br>
+            <label for="interval">Interval:</label>
+            <input type="number" id="interval" placeholder="Enter interval" required><br>
+            <button id="mint">Mint Tokens</button>
+          </div>
+      
+          <div>
+            <h2>Check Timestamp</h2>
+            <button id="checkTimestamp">Check Timestamp</button>
+          </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.5.2/ethers.umd.min.js" integrity="sha512-PtOcu3WZTldHT+VjAJdWV5ss+iGebEgc1h5olJuxUNPvKuC0VOZsk1UhNgQYi5oIyrNHhdIOw8WQMdZwBv1MyQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,2 @@
+1st transaction = https://goerli.etherscan.io/tx/0x4b3367e8586e240e23a16f9f2048314c9481587c09586f1f603073c13ab91197
+contract = https://goerli.etherscan.io/address/0xf563833fdb9ac0d4ecc929f8a49dbc7be8385429
