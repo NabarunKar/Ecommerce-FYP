@@ -5,7 +5,11 @@ import Navbar from "./components/Navbar/Navbar";
 import Home from "./pages/Home/Home";
 import Product from "./pages/Product/Product";
 import Products from "./pages/Products/Products";
-import "./app.scss"
+import "./app.scss";
+import Login from "./pages/Login/Login";
+import Signup from "./pages/Signup/Signup";
+import Success from "./pages/Success/Success";
+import Profile from "./pages/Profile/Profile";
 
 const Layout = () => {
   return (
@@ -26,6 +30,23 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home />,
       },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/signup",
+        element: <Signup />,
+      },
+      {
+        path: "/success",
+        element: <Success />,
+      },
+      {
+        path: "/profile",
+        element: <Profile />,
+      },
+
       {
         path: "/products/:id",
         element: <Products />,
