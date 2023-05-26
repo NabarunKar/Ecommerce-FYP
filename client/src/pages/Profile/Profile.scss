@@ -1,0 +1,35 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  height: 100vh;
+  .profile__avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin-bottom: 20px;
+  }
+
+  .profile__info {
+    text-align: center;
+
+    .profile__name {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .profile__email {
+      font-size: 18px;
+      color: #666;
+      margin-bottom: 10px;
+    }
+
+    .profile__username {
+      font-size: 16px;
+      color: #999;
+    }
+  }
+}
